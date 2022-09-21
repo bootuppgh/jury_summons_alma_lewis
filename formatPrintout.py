@@ -123,7 +123,7 @@ answer_lookup = {
             "34": "Wingth", 
             "35": "Williams", 
             "36": "Willmore", 
-            "37": "None of the above" 
+            "37": "Ninguna de las anteriores" 
         },
     }
 }
