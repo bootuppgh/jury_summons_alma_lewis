@@ -225,8 +225,7 @@ def formatDocument(userInfo):
             paragraph.text = "You [{}] related or know a descendent of an immigrant from the 1824 migration from the United States to Haiti/Dominican Republic.".format(questionTwoAnswer)
   
             if lang == "es":
-                paragraph.text = "Usted [{}] ser un familiar o conoce a un descendiente de inmigrante de la migración de 1824 de los Estados Unidos a Haití/República Dominicana.
-".format(questionTwoAnswer)
+                paragraph.text = "Usted [{}] ser un familiar o conoce a un descendiente de inmigrante de la migración de 1824 de los Estados Unidos a Haití/República Dominicana.".format(questionTwoAnswer)
 
         if '[Q3]' in paragraph.text:
             questionThreeAnswer = answer_lookup[lang]["a3"][userInfo["a3"]]
