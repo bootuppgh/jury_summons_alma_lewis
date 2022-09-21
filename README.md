@@ -8,6 +8,8 @@ pip install redis
 pip install python-docx
 python redis_sub.py
 ```
+### TO TEST PRINT OUT
+`python formatPrintout.py`
 
 # Key Pieces of Software
 ### The Web App
