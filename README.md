@@ -2,6 +2,13 @@
 
 This repository contains all the code used for the Civilian Reviewer Installation, the repo is called Jurors Summons because there was an early miscommunication about the name.  There are a couple of pieces of infrastructure and things to be aware of.
 
+### INSTALL & RUN
+```
+pip install redis
+pip install python-docx
+python redis_sub.py
+```
+
 # Key Pieces of Software
 ### The Web App
 The Web App is the client app that participants will interact with on their phones.  It is a basic NodeJs Express app which ran on Heroku.  The key piece that makes this work is a library called fingerprint which is able to create a browser fingerprint.  This would typically be used for ad based tracking but we can use it here to easily know when one participant has moved from one station to another.  When a fingerprint id is generated it gets sent into a Redis DB which is the back end db for the entire system.
