@@ -165,10 +165,10 @@ def score_answers(userInfo, country_score):
 def formatDocument(userInfo):
     print("Starting Custom Print Job")
     print(userInfo)
-    doc = Document("/home/pi/CivilResponsesEN.docx")
+    doc = Document("/Users/amilcook/Documents/printouts/CivilResponsesEN.docx")
     lang = userInfo["lang"]
     if userInfo["lang"] == "es":
-        doc = Document("/home/pi/CivilResponsesES.docx")
+        doc = Document("/Users/amilcook/Documents/printouts/CivilResponsesES.docx")
 
 
     country_name = country_index_score[userInfo["countryName"]]["country_name"]
@@ -211,7 +211,7 @@ def formatDocument(userInfo):
             if lang == "es":
                 paragraph.text = "Resultado : No Califica"
 
-        if '[Q1 answer]' in paragraph.text:   
+        if '[Q1]' in paragraph.text:   
             q1Answer = answer_lookup[lang]["a1"][userInfo["a1"]]
 
             if lang == "en":
@@ -220,26 +220,25 @@ def formatDocument(userInfo):
                 q1Answer = answer_lookup[lang]["a1"][userInfo["a1"]]
                 paragraph.text = "Para usted, la historia colonial es [{}] para el presente.".format(q1Answer)
 
-        if '[Q2 answer]' in paragraph.text:
+        if '[Qc2]' in paragraph.text:
             questionTwoAnswer = answer_lookup[lang]["a2"][userInfo["a2"]]
-            paragraph.text = "You are [{}] to a person who is stateless.".format(questionTwoAnswer)
+            paragraph.text = "You [{}] related or know a descendent of an immigrant from the 1824 migration from the United States to Haiti/Dominican Republic.".format(questionTwoAnswer)
   
             if lang == "es":
                 paragraph.text = "Usted es [{}] a una persona apátrida.".format(questionTwoAnswer)
 
-        if '[Q4 answer]' in paragraph.text:
+        if '[Q3]' in paragraph.text:
             questionThreeAnswer = answer_lookup[lang]["a3"][userInfo["a3"]]
             print("paragraph text", paragraph.text)
-            paragraph.text = "You [{}] that the nation-state is a violent institution.".format(questionThreeAnswer)
+            paragraph.text = "For you, [{}] affects your material conditions.".format(questionThreeAnswer)
             if lang == "es":
                 paragraph.text = "Usted está [{}] que el estado-nación es una institución violenta.".format(questionThreeAnswer)
 
-        if '[Q3 answer]' in paragraph.text:
-            questionFourAnswer = answer_lookup[lang]["sugarIntake"][userInfo["sugarIntake"]]
-            paragraph.text = "Your weekly sugar intake is [{}].  To be an impartial reviewer would not consume any sugar.".format(
-                answer_lookup[lang]["sugarIntake"][userInfo["sugarIntake"]])
-            if lang == "es":
-                paragraph.text = "Su consumo semanal de azúcar es [Q3 answer].".format(questionFourAnswer)
+#        if '[Sugar]' in paragraph.text:
+#            questionFourAnswer = answer_lookup[lang]["sugarIntake"][userInfo["sugarIntake"]]
+#            paragraph.text = "For you, [{}] affects your material conditions.".format(answer_lookup[lang]["sugarIntake"][userInfo["sugarIntake"]])
+#            if lang == "es":
+#                paragraph.text = "Su consumo semanal de azúcar es [Q3 answer].".format(questionFourAnswer)
 
         if '[ANSWER]' in paragraph.text:
             print("Setting Random Value 1")
@@ -250,13 +249,13 @@ def formatDocument(userInfo):
                 paragraph.text = "Su nacionalidad [{}] tiene un índice de {}% en el índice de calidad de la nacionalidad".format(country_name,country_score)
 
 
-        if '[X out of 5]' in paragraph.text or '[X de 5]' in paragraph.text:
+        if '[X out of 4]' in paragraph.text or '[X de 4]' in paragraph.text:
             print("Setting Random Value 1")
             paragraph.style = 'Insertion'
 
-            paragraph.text = "You answered [{} out of 5] questions correctly. To be an impartial reviewer you would have to answer all the questions correctly.".format(num_correct)
+            paragraph.text = "You answered [{} out of 4] questions correctly. To be an impartial reviewer you would have to answer all the questions correctly.".format(num_correct)
             if lang == "es":
-                paragraph.text = "Usted obtuvo [{} de 5] correctas. Para ser un evaluador imparcial debe responder correctamente todas las preguntas.".format(num_correct)
+                paragraph.text = "Usted obtuvo [{} de 4] correctas. Para ser un evaluador imparcial debe responder correctamente todas las preguntas.".format(num_correct)
 
 
 
