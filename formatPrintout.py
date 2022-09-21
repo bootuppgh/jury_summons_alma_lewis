@@ -274,7 +274,11 @@ def formatDocument(userInfo):
 
 if __name__ == "__main__":
     try:
-        formatDocument({'userName': 'Jsasesdsica', 'userId': 'd63142d7cf6f53a093ebc32ae1448f18', 'a1': '1', 'a2': '2',
-                       'a3': '1', 'countryName': "53", 'sugarIntake': '3', 'archivePermission': '1', 'lang': 'es'})
+if __name__ == "__main__":
+    try:
+        formatDocument({"userName":"mattest1","userId":"d30ecf6db2dc97f363a57af1bf4f4658","a1":"1","a2":"0","a3":"3","countryName":"7","sugarIntake":"1","archivePermission":"1","lang":"en"})
+    except Exception as e:
+        print(e)
+
     except Exception as e:
         print(e)
