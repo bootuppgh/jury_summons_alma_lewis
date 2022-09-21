@@ -218,21 +218,22 @@ def formatDocument(userInfo):
                 paragraph.text = "You [{}] know or have heard of the suspects and witnesses.".format(q1Answer)
             else:
                 q1Answer = answer_lookup[lang]["a1"][userInfo["a1"]]
-                paragraph.text = "Para usted, la historia colonial es [{}] para el presente.".format(q1Answer)
+                paragraph.text = "Usted [{}] los testigos o los sospechosos.".format(q1Answer)
 
         if '[Qc2]' in paragraph.text:
             questionTwoAnswer = answer_lookup[lang]["a2"][userInfo["a2"]]
             paragraph.text = "You [{}] related or know a descendent of an immigrant from the 1824 migration from the United States to Haiti/Dominican Republic.".format(questionTwoAnswer)
   
             if lang == "es":
-                paragraph.text = "Usted es [{}] a una persona apátrida.".format(questionTwoAnswer)
+                paragraph.text = "Usted [{}] ser un familiar o conoce a un descendiente de inmigrante de la migración de 1824 de los Estados Unidos a Haití/República Dominicana.
+".format(questionTwoAnswer)
 
         if '[Q3]' in paragraph.text:
             questionThreeAnswer = answer_lookup[lang]["a3"][userInfo["a3"]]
             print("paragraph text", paragraph.text)
             paragraph.text = "For you, [{}] affects your material conditions.".format(questionThreeAnswer)
             if lang == "es":
-                paragraph.text = "Usted está [{}] que el estado-nación es una institución violenta.".format(questionThreeAnswer)
+                paragraph.text = "Para usted, [{}] afecta sus condiciones materiales.".format(questionThreeAnswer)
 
 #        if '[Sugar]' in paragraph.text:
 #            questionFourAnswer = answer_lookup[lang]["sugarIntake"][userInfo["sugarIntake"]]
