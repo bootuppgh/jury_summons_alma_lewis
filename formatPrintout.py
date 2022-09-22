@@ -264,11 +264,11 @@ def formatDocument(userInfo):
     doc_name = '{}.docx'.format(userInfo["userName"])
     doc.save(doc_name)
     print("Formatted And Saved Document with name {}".format(doc_name))
-    subprocess.run(["libreoffice", "--headless", "--convert-to",
-                   "pdf", "{}.docx".format(userInfo["userName"])])
-    subprocess.run(
-        ["lp", "-d", "myprinter", "{}.pdf".format(userInfo["userName"])])
-    print("Completed Format Of Document")
+#    subprocess.run(["libreoffice", "--headless", "--convert-to",
+#                   "pdf", "{}.docx".format(userInfo["userName"])])
+#    subprocess.run(
+#        ["lp", "-d", "myprinter", "{}.pdf".format(userInfo["userName"])])
+#    print("Completed Format Of Document")
 
 
 if __name__ == "__main__":
