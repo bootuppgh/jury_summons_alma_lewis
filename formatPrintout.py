@@ -23,8 +23,8 @@ count =0
 answer_lookup = {
     "en": {
         "a1": {
-            "1": "Do",
-            "2": "Do not",
+            "1": "do",
+            "2": "do not",
         },
         "a3": {
             "1": "how you see and identify yourself",
