@@ -185,7 +185,7 @@ def formatDocument(userInfo):
 
 
     num_correct = score_answers(userInfo, country_score)
-    qualify_status = "QUALIFY"  if num_correct == 5  else "DISQUALIFY"
+    qualify_status = "QUALIFY"  if num_correct == 4  else "DISQUALIFY"
     print("QUALIFY : " , qualify_status)
     print("NUM CORRECT ", num_correct)
 
